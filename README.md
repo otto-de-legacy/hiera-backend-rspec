@@ -26,7 +26,7 @@ Alternatively, if you wish to just use the gem in a script, you can run:
 $ gem install hiera-backend-rspec
 ```
 
-Finally, just add `require 'marathon'` to the top of the file using this gem.
+Finally, just add `require 'hiera-backend-rspec'` to the top of the file using this gem.
 
 Usage
 -----
@@ -66,7 +66,3 @@ License
 -------
 
 This program is licensed under the MIT license. See LICENSE for details.
-
-[1]: https://mesosphere.github.io/marathon/docs/rest-api.html
-[2]: https://github.com/mesosphere/marathon_client
-[3]: https://github.com/swipely/docker-api
