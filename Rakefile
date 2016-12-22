@@ -1,5 +1,3 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
-
 require 'rake'
 require 'hiera-backend-rspec'
 require 'rspec/core/rake_task'

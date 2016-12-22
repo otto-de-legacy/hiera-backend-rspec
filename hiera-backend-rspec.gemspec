@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.description   = 'Rspec backend for hiera'
   gem.summary       = 'Rspec backend for hiera'
   gem.homepage      = 'https://github.com/otto-de/hiera-backend-rspec'
-  gem.license       = 'MIT'
+  gem.license       = 'Apache 2.0'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

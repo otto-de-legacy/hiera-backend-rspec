@@ -9,19 +9,19 @@ fi
 
 VERSION="${1}"
 
-sed -e "s:VERSION.*:VERSION = '${VERSION}':" -i lib/marathon/version.rb
+sed -e "s:VERSION.*:VERSION = '${VERSION}':" -i lib/hiera_backend_rspec.rb
 
 bundle exec rake spec
 
-git commit -m "prepare release ${VERSION}" lib/marathon/version.rb
+git commit -m "prepare release ${VERSION}" lib/hiera_backend_rspec.rb
 
-gem build "marathon-api.gemspec"
+gem build "hiera-backend-rspec.gemspec"
 git tag "${VERSION}"
 
 echo "upload?"
 read ok
 
-gem push "marathon-api-${VERSION}.gem"
+gem push "hiera-backend-rspec-${VERSION}.gem"
 
 echo "push?"
 read ok
