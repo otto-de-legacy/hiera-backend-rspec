@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.1.5
+  - 2.2.0
+  - 2.3.0
+env:
+  global:
+    - CODECLIMATE_REPO_TOKEN=<some-token>
+script: bundle exec rake
