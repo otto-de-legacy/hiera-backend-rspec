@@ -4,6 +4,9 @@ rvm:
   - 2.1.5
   - 2.2.0
   - 2.3.0
+env:
+  global:
+    secure: sjoGNVCvbyO+RTuqDd0yaPjVqEeq3VufQVQCOFHz0sbwIyBP9uWmhJwmgqtv9kWy2NdSziF5jSDt5V2rVeFCV+82x5jOE5qgAlKj5NvONElqeQXe5ygnsIxJ3nVuZKH5BY3XxSXeKGOEJbi5xIrCADn0P/16Afa4zr0cpL1kqN4YTgIzDARyzUUumvIQZzUqRD00HFx4CPhwzyiSwTgWKDBOyJExE9/jNkrkKXsWCxfy9+V2k1nXD3rjjTWe1OvhwrgI8KTU0w+uAHq8CglHfAcVn+nJ2WOC5dT/rTwR6Ep1LrD87CoNzzWakaAchK9NljnsAsh3j2sJuDk8iMElqisopABCBAkCZErYb+A6WFBLIAPbL+7Oyr/kTPtgXS3J33Mh9ygmA0q47LVx9+nAXwGKFqjLjCb26CnksJt6usq7xAB+PGaOHwkaHev1UQAv2q9nqvdC6jdWNCXCvnJLdz5Az2vmlVxC3PQGFFo07YRJ4DAnBgjRvCZW5IIH9Dnc4WRQPH4rxJ7G2r9JlB2RQ0k0oauxAU4dC6PjG1UzuWsww8Gdp0NnejBHDnDfTzPCFaJMZxspzZLmi+jKhZ6NyHIdZkUPrvKsix3k8iA+6ZUSNIqY2WaSz+r7dKsNXRzVXut6/eiVEA/jU7yvoEmYWQeUYTAB201RVS65NXYfi/0=
 script: bundle exec rake
 after_success:
   - bundle exec codeclimate-test-reporter
