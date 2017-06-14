@@ -25,11 +25,11 @@ class Hiera
         end
 
         it 'provides a value for a valid key' do
-          expect(subject.lookup('stringval', nil, nil, nil)).to eq 'string'
-          expect(subject.lookup('boolval', nil, nil, nil)).to eq true
-          expect(subject.lookup('numericval', nil, nil, nil)).to eq 42
-          expect(subject.lookup('arrayval', nil, nil, nil)).to eq ['one', 'two']
-          expect(subject.lookup('hashval', nil, nil, nil)).to eq key: 'value'
+          expect(subject.lookup('stringval', nil, nil, nil, nil)).to eq 'string'
+          expect(subject.lookup('boolval', nil, nil, nil, nil)).to eq true
+          expect(subject.lookup('numericval', nil, nil, nil, nil)).to eq 42
+          expect(subject.lookup('arrayval', nil, nil, nil, nil)).to eq ['one', 'two']
+          expect(subject.lookup('hashval', nil, nil, nil, nil)).to eq key: 'value'
         end
 
         describe 'scoped hiera data' do
@@ -42,9 +42,12 @@ class Hiera
           end
 
           it 'scopes data' do
-            expect(subject.lookup('stringval', nil, nil, nil)).to eq nil
-            expect(subject.lookup('boolval', nil, nil, nil)).to eq false
-            expect(subject.lookup('numericval', nil, nil, nil)).to eq Math::PI
+            expect do
+              subject.lookup('stringval', nil, nil, nil, nil)
+            end.to raise_error(/:no_such_key/)
+
+            expect(subject.lookup('boolval', nil, nil, nil, nil)).to eq false
+            expect(subject.lookup('numericval', nil, nil, nil, nil)).to eq Math::PI
           end
         end
       end
