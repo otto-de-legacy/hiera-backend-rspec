@@ -5,12 +5,11 @@ class Hiera
   module Backend
     # Rspec backend to use let(:hiera_data) in specs
     class Rspec_backend
-      def lookup(key, _, _, _)
-        answer = nil
-        if Thread.current[:rspec_hiera_data]
-          answer = Thread.current[:rspec_hiera_data][key]
+      def lookup(key, _, _, _, _)
+        unless (data = Thread.current[:rspec_hiera_data]) && data.include?(key)
+          throw :no_such_key
         end
-        answer
+        data[key]
       end
     end
   end
