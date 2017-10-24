@@ -9,11 +9,11 @@ fi
 
 VERSION="${1}"
 
-sed -e "s:VERSION.*:VERSION = '${VERSION}':" -i lib/hiera-backend-rspec.rb
+sed -e "s:VERSION.*:VERSION = '${VERSION}':" -i lib/hiera-backend-rspec/version.rb
 
 bundle exec rake spec
 
-git commit -m "prepare release ${VERSION}" lib/hiera-backend-rspec.rb
+git commit -m "prepare release ${VERSION}" lib/hiera-backend-rspec/version.rb
 
 gem build "hiera-backend-rspec.gemspec"
 git tag "${VERSION}"
